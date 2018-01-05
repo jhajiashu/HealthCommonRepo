@@ -1,0 +1,30 @@
+<div>
+    <mat-toolbar class="home-toolbar" color="primary">
+                <button mat-button><mat-icon>menu</mat-icon></button>
+                <span class="home-fill-remaining"></span>
+                <button mat-button (click)="Logout()">Logout</button>
+    </mat-toolbar>
+    <div class="docs-primary-header">
+        <h1>Update User</h1>
+    </div>
+</div>
+<div class="registration-card-container">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>User updation Form</mat-card-title>
+                <form #userUpdationForm = "ngForm" (ngSubmit) = "userUpdationForm.form.valid && updateUser()" novalidate>
+                   	<mat-form-field class="registration-full-width">
+                        <input matInput name="full_name" type = "text" [(ngModel)] = "updatedUser.userName" #full_name = "ngModel"  placeholder="Full name" required>
+                        <mat-error *ngIf = "userUpdationForm.submitted && !full_name.valid">Name is required!</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="registration-full-width">
+                         <input matInput name="mobile" type = "number" [(ngModel)] = "updatedUser.mobile" #mobile = "ngModel" placeholder="Mobile number" required>
+                         <mat-error *ngIf = "userUpdationForm.submitted && !mobile.valid">Mobile number is required!</mat-error>
+                    </mat-form-field>
+                	<div>
+                    	<button type = "submit" mat-raised-button color="primary" [disabled] = '!userUpdationForm.form.valid'>Update</button>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+      </div>

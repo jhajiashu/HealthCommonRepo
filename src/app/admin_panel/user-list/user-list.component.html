@@ -1,0 +1,23 @@
+<div>
+    <mat-toolbar class="home-toolbar" color="primary">
+                <button mat-button><mat-icon>menu</mat-icon></button>
+                <span class="home-fill-remaining"></span>
+                <button mat-button (click)="Logout()">Login</button>
+    </mat-toolbar>
+    <div class="docs-primary-header">
+        <h1>Users</h1>
+    </div>
+</div>
+
+<div class="registration-card-container">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>User List</mat-card-title>
+                <mat-list role='list'>
+                	<mat-list-item *ngFor = 'let user of users' role='listitem'>
+                		<div matLine><span>{{ user.userName }}{{ user.id }}</span>|<button mat-button color="warn" (click)="deleteUser(user.id)">Delete</button>|<button mat-button color="accent" (click)="updateUser(user.id)">Update</button></div>
+                	</mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+      </div>

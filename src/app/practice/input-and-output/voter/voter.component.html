@@ -1,0 +1,7 @@
+<mat-card>
+	<mat-card-title>{{ name }}</mat-card-title>
+	<div>
+		<button mat-button color = "accent" (click) = "vote(true)" [disabled]="voted">Agree</button>
+		<button mat-button color = "accent" (click) = "vote(false)" [disabled]="voted">Disagree</button>
+	</div>
+</mat-card>

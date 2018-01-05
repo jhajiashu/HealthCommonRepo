@@ -1,0 +1,6 @@
+<mat-card>
+	<h2>Should mankind colonize the universe?</h2>
+	<h3>Agree: {{ agreed }} , Disagree: {{disagreed}}</h3>
+</mat-card>
+<h1>Start Voting:</h1>
+<app-voter *ngFor="let voter of voters" [name] = "voter" (onVoted) = "onVoted($event)"></app-voter>
